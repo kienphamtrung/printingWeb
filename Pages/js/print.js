@@ -18,3 +18,104 @@ fileInput.addEventListener('change', () => {
 document.getElementById('returnButton').addEventListener('click', function() {
   window.location.href = 'printingPage.html';
 });
+
+
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+  document.querySelector(".overlay").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+  document.querySelector(".overlay").style.display = "none";
+
+  // Clear previous error messages when closing the modal
+  clearErrorMessages();
+}
+
+function clearErrorMessages() {
+  // Remove error messages next to each input field
+  const errorContainers = document.querySelectorAll(".error-container");
+  errorContainers.forEach(container => container.innerHTML = "");
+}
+
+function submitForm() {
+  // Clear previous error messages
+  clearErrorMessages();
+
+  // Check if all required fields are filled
+  const printerID = document.getElementById("printerID");
+  const inputPages = document.getElementById("inputPages");
+  const pageSize = document.getElementById("pageSize");
+  const copies = document.getElementById("copies");
+  const layouts = document.getElementById("layouts");
+
+  if (!printerID.value) {
+    displayErrorMessage(printerID, "Please enter Printer ID.");
+  }
+
+  // if (!inputPages.value) {
+  //   displayErrorMessage(inputPages, "Please enter Input Pages.");
+  // }
+
+  if (!pageSize.value) {
+    displayErrorMessage(pageSize, "Please select Page Size.");
+  }
+
+  if (!copies.value) {
+    displayErrorMessage(copies, "Please enter the number of Copies.");
+  }
+
+  // if (!layouts.value) {
+  //   displayErrorMessage(layouts, "Please select Layouts.");
+  // }
+
+  // Check if there are any error messages
+  const errorContainers = document.querySelectorAll(".error-container");
+  const hasErrors = Array.from(errorContainers).some(container => container.innerHTML !== "");
+
+  if (!hasErrors) {
+    document.getElementById("printConfirmationModal").style.display = "block";
+    closeModal();
+
+    document.querySelector(".overlay").style.display = "block";
+  }
+}
+
+function displayErrorMessage(inputElement, message) {
+  // Create and append an error message next to the input field
+  const errorContainer = document.createElement("div");
+  errorContainer.className = "error-container";
+  errorContainer.style.color = "red"; 
+
+  errorContainer.innerHTML = message;
+  
+  inputElement.parentNode.appendChild(errorContainer);
+}
+
+function handleInputPagesChange() {
+  const selectElement = document.getElementById("inputPagesSelect");
+  const otherInput = document.getElementById("inputPagesOther");
+
+  if (selectElement.value === "other") {
+    // If "Other" is selected, show the input field
+    otherInput.style.display = "inline-block";
+    otherInput.required = true;
+  } else {
+    // If another option is selected, hide the input field
+    otherInput.style.display = "none";
+    otherInput.required = false;
+  }
+}
+
+function closePrintConfirmation() {
+  // Close the print confirmation modal
+  document.getElementById("printConfirmationModal").style.display = "none";
+  document.querySelector(".overlay").style.display = "none";
+
+  // Clear previous error messages when closing the main modal
+  clearErrorMessages();
+  window.location.href = 'printingPage.html';
+  // Additional logic for switching to other pages goes here
+  // For example, you can use window.location.href to navigate to another page
+}
