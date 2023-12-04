@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+.title{
+    width: 100%;
+    display: flex;
+    background-color: rgb(15, 183, 229);
+    flex-direction: row;
+    
+}
+
+.title img{
+    margin: 0px;
+    padding: 10px;
+   
+    max-height: 150px;
+    margin-right: 10px; 
+}
+
+.title .banner-text{
+    margin-top: 50px;;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.text{
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+
+#file-input {
+  font-size: 20px;
+    width: 100px;
+    color: transparent;
+  }
+
+  #file-input-label{
+    font-size: 20px;
+
+  }
+.upload img{
+  margin-left: 115px;
+  margin-bottom: 10px;
+  width: 64px;
+}
+
+.function{
+  margin-left: 5px;
+  font-size: 20px;
+  color: aliceblue;
+  background-color:gray;
+  border: 2px solid black;
+}
+
+.function:hover{
+  background-color:  rgb(204, 229, 15);
+  color: blac;
+}
+  .upload{
+    border: 2px dashed #212121;
+    height: 300px;
+    padding: 45px 0px 45px 220px;
+    margin: auto;
+    margin-top: 25px;
+    justify-content: center;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  #returnButton {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-left: 40px;
+    margin-bottom: 60px;
+    background: none;
+    border: none;
+    color: blue; /* Change color as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer;
+  }

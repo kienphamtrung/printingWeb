@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         email: email.value,
         password: password.value,
       };
+      // let name = "name";
       let json = JSON.stringify(user);
       if (!username.value || !email.value || !password.value) {
         alert("Please enter entire information");
@@ -23,8 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Wrong confirm password");
       }
       else {
+        // localStorage.setItem(name, username.value);
         localStorage.setItem(username.value, json);
-        alert("dang ky thanh cong");
+        alert("Registered successfully");
+        window.location.href = "login.html";
+
       }
     }
   });

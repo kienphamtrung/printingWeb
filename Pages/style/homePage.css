@@ -6,7 +6,7 @@ body {
 .topnav {
   background-color: lightgrey;
   overflow: hidden;
-  max-height: 70px;
+  max-height: 90px;
 }
 
 .topnav a {
@@ -22,25 +22,27 @@ body {
 
 .topnav a.home{
   margin: 0px;
-  padding: 18px 16px;
+  padding: 28px 20px;
 
 }
 
 .topnav a:hover {
-  background-color: #04AA6D;
+  background-color:  rgb(15, 183, 229);
   color: white;
 }
 
 .topnav a.split {
   float: right;
-  background-color: #04AA6D;
+  background-color:  rgb(15, 183, 229);
   color: white;
 }
 
 .background-image {
   background-image: url('https://e-learning.hcmut.edu.vn/theme/boost/images/slbktv.jpg?1701267242715');
-  background-size: cover;
-  height: 700px;
+  height: 680px;
+  object-fit: cover;
+  width: auto;
+  background-repeat: no-repeat;
 }
 
 .text-container {
@@ -50,7 +52,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  background-color: rgba(4, 170, 109, 0.7);
+  background-color: rgba(15, 183, 229, 0.7);
   padding: 20px;
   color: black;
   font-weight: bold;
@@ -73,7 +75,7 @@ body {
 }
 
 .logo-container img {
-  margin: 0px;
+  margin: 10px;
   padding: 0px;
   max-height: 70px;
   max-width: 100%;

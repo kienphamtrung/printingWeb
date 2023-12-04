@@ -10,16 +10,26 @@ btnLogin.addEventListener("click", (e) => {
     email: email.value,
     password: password.value,
   };
+  console.log(username.value);
+
   // let userAccount;
   console.log(user);
   let json = JSON.stringify(user);
+
   if (!username.value || !email.value || !password.value) {
-    alert("vui long nhap day du thong tin");
+    alert("Please fill entire information");
   }
   if (localStorage.getItem(username.value) == json) {
-    alert("dang nhap thanh cong");
+    alert("Logged in successfully");
+    let name = "name";
+    localStorage.setItem(name, username.value);
+    localStorage.setItem('isLoggedIn', true);
+
+    console.log(username);
+
+    // document.querySelector('.split.home').textContent = username.value;
     window.location.href = "homePage.html";
   } else {
-    alert("dang nhap that bai");
+    alert("Login failed");
   }
 });
