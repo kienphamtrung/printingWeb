@@ -1,6 +1,8 @@
 const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
 const loginLink = document.querySelector('.split.home');
+const PrintService = document.querySelector('.PrintService');
+
 console.log(isLoggedIn);
 loginLink.textContent = isLoggedIn ? 'Logout' : 'Login';
 var login = document.getElementById("loginLink");
@@ -16,6 +18,20 @@ loginLink.addEventListener("click", () => {
   } else {
 
     loginLink.textContent = 'Login';
+    // localStorage.setItem('isLoggedIn', true);
+  }
+});
+
+PrintService.addEventListener("click", () => {
+  if (isLoggedIn) {
+
+    // PrintService.href = ""
+    // localStorage.setItem('name', null);
+
+    // localStorage.setItem('isLoggedIn', false);
+  } else {
+
+     PrintService.href = "login.html"
     // localStorage.setItem('isLoggedIn', true);
   }
 });
