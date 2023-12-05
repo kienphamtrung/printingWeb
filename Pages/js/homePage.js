@@ -4,20 +4,20 @@ const loginLink = document.querySelector('.split.home');
 const PrintService = document.querySelector('.PrintService');
 
 console.log(isLoggedIn);
-loginLink.textContent = isLoggedIn ? 'Logout' : 'Login';
+loginLink.textContent = isLoggedIn ? 'Đăng xuất' : 'Đăng nhập';
 var login = document.getElementById("loginLink");
 
 loginLink.addEventListener("click", () => {
   if (isLoggedIn) {
 
-    loginLink.textContent = 'Logout';
+    loginLink.textContent = 'Đăng xuất';
     loginLink.href = ""
     // localStorage.setItem('name', null);
 
     localStorage.setItem('isLoggedIn', false);
   } else {
 
-    loginLink.textContent = 'Login';
+    loginLink.textContent = 'Đăng nhập';
     // localStorage.setItem('isLoggedIn', true);
   }
 });
