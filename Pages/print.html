@@ -65,11 +65,12 @@
         <option value="layout1">one-sided</option>
         <option value="layout2">two-sided</option>
       </select>
-      <label for="layouts">Binding Location:</label>
-      <select id="layouts" name="layouts" required>
-        <option value="layout1">Long Edge (Left)</option>
-        <option value="layout2">Short Edege (Top)</option>
+      <label for="locations">Binding Location:</label>
+      <select id="locations" name="locations" required>
+        <option value="location1">Long Edge (Left)</option>
+        <option value="location2">Short Edege (Top)</option>
       </select>
+      <span id="availablePagesText">Number of available pages: </span>
       <div class="button-container">
         <button onclick="closeModal()">Đóng</button>
         <button onclick="submitForm()">In</button>

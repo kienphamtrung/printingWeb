@@ -18,11 +18,22 @@ fileInput.addEventListener('change', () => {
 document.getElementById('returnButton').addEventListener('click', function() {
   window.location.href = 'printingPage.html';
 });
+localStorage.setItem("numberOfAvailablePages", 10); // Replace 10 with the actual value
 
+  // Function to update the content based on the value in local storage
+  function updateAvailablePagesText() {
+    const availablePagesTextElement = document.getElementById("availablePagesText");
+    const numberOfAvailablePages = localStorage.getItem("numberOfAvailablePages");
+
+    // Update the content with the bold text and the variable value
+    availablePagesTextElement.innerHTML = `Number of available pages: <strong>${numberOfAvailablePages}</strong>`;
+  }
 
 function openModal() {
   document.getElementById("myModal").style.display = "block";
   document.querySelector(".overlay").style.display = "block";
+  updateAvailablePagesText();
+
 }
 
 function closeModal() {
