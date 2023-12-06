@@ -20,7 +20,7 @@
     </div>
     <div class="upload">
         <img src="../asset/file1.png" alt="Logo">
-        <div class =>
+        <div >
             <input type="file" id="file-input" name="file-input" />
             <label id="file-input-label" for="file-input">Chưa chọn tệp</label>
             <button type="button" class="function Print" onclick="openModal()">
@@ -33,8 +33,12 @@
     <!-- <button onclick="openModal()">Open Modal</button> -->
 
     <div id="myModal" class="modal">
+      <div class = "modalHeader">
+        <div class = "image-modelHeader">
+        <img src="../asset/process.png" alt="Logo">
+        </div>
       <h2>Printing Properties</h2>
-
+      </div>
       <label for="printerID">Printer ID:</label>
       <input type="text" id="printerID" name="printerID" required>
     

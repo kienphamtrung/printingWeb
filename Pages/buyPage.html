@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/buyPage.css" />
+
+</head>
+
+<body>
+    <div class="title">
+        <img src="../asset/hcmut.png" alt="Logo">
+        <div class="banner-text">
+            <div class="text">HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY</div>
+            SMART PRINTING SERVICE
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="header">
+            <img src="../asset/paper.png" alt="Logo">
+            <h2>Mua thêm giấy in</h2>
+        </div>
+        <div class="input">
+            <label for="copies">Nhập số lượng:</label>
+            <input type="number" id="copies" name="copies" min="1" required>
+            <label for="copies">Chọn loại: </label>
+            <select id="layouts" name="layouts" required>
+                <option value="layout1">A4</option>
+                <option value="layout2">A3</option>
+              </select>
+            <button type="button" class="function Buy" onclick="">
+                Xác nhận
+            </button>
+
+        </div>
+        <!-- <img src="../asset/file1.png" alt="Logo"> -->
+        <!-- <div class =>
+            <input type="file" id="file-input" name="file-input" />
+            <label id="file-input-label" for="file-input">Chưa chọn tệp</label>
+            <button type="button" class="function Print" onclick="openModal()">
+               Print
+            </button>
+        </div> -->
+    </div>
+    <button id="returnButton"> &lt;&lt; Quay lại </button>
+
+</body>
+<script type="text/javascript" src="./js/buyPage.js"></script>
+
+</html>

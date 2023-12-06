@@ -5,7 +5,10 @@ loginLink.textContent = localStorage.getItem('name');
 }
 
 document.getElementById('printing').addEventListener('click', function() {
-    // Replace 'otherpage.html' with the path to the page you want to redirect to
     window.location.href = 'print.html';
+  });
+  
+  document.getElementById('buying').addEventListener('click', function() {
+    window.location.href = 'buyPage.html';
   });
   
