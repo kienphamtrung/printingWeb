@@ -136,7 +136,7 @@ function closePrintConfirmation() {
 
   // Clear previous error messages when closing the main modal
   clearErrorMessages();
-  window.location.href = 'printingPage.html';
+  // window.location.href = 'printingPage.html';
 }
 
 function closeBuyConfirmation() {
