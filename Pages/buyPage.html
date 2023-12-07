@@ -24,14 +24,14 @@
             <h2>Mua thêm giấy in</h2>
         </div>
         <div class="input">
-            <label for="copies">Nhập số lượng:</label>
-            <input type="number" id="copies" name="copies" min="1" required>
-            <label for="copies">Chọn loại: </label>
-            <select id="layouts" name="layouts" required>
-                <option value="layout1">A4</option>
-                <option value="layout2">A3</option>
+            <label for="numbers">Nhập số lượng:</label>
+            <input type="number" id="numbers" name="numbers" min="1" required>
+            <label for="types">Chọn loại: </label>
+            <select id="types" name="types" required>
+                <option value="type1">A4</option>
+                <option value="type2">A3</option>
               </select>
-            <button type="button" class="function Buy" onclick="">
+            <button type="button" class="function Buy" onclick="accept()">
                 Xác nhận
             </button>
 
@@ -44,6 +44,9 @@
                Print
             </button>
         </div> -->
+    </div>
+    <div id = "availablePage">
+        Số trang in hiện có: 
     </div>
     <button id="returnButton"> &lt;&lt; Quay lại </button>
 

@@ -49,7 +49,7 @@ body {
     height: 185px;
     /* padding: 45px 0px 45px 220px; */
     margin: auto;
-    margin-top: 25px;
+    margin-top: 50px;
     /* justify-content: center; */
     width: 480px;
     display: flex;
@@ -89,4 +89,13 @@ body {
 
   .container button:hover {
     background-color: #45a049;
+  }
+
+  #availablePage{
+
+    font-size: 22px;
+    width: 480px;
+
+    margin: auto ;
+    margin-top: 5px;
   }

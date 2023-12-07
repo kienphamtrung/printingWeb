@@ -15,19 +15,22 @@ fileInput.addEventListener('change', () => {
   }
 });
 
-document.getElementById('returnButton').addEventListener('click', function() {
+document.getElementById('returnButton').addEventListener('click', function () {
   window.location.href = 'printingPage.html';
 });
-localStorage.setItem("numberOfAvailablePages", 10); // Replace 10 with the actual value
+// localStorage.setItem("numberOfAvailablePages", 10); // Replace 10 with the actual value
 
-  // Function to update the content based on the value in local storage
-  function updateAvailablePagesText() {
-    const availablePagesTextElement = document.getElementById("availablePagesText");
-    const numberOfAvailablePages = localStorage.getItem("numberOfAvailablePages");
-
-    // Update the content with the bold text and the variable value
-    availablePagesTextElement.innerHTML = `Number of available pages: <strong>${numberOfAvailablePages}</strong>`;
+// Function to update the content based on the value in local storage
+function updateAvailablePagesText() {
+  const availablePagesTextElement = document.getElementById("availablePagesText");
+  if (localStorage.getItem("numberOfAvailablePages") == null) {
+    localStorage.setItem("numberOfAvailablePages", 0); // Replace 10 with the actual value
   }
+  const numberOfAvailablePages = localStorage.getItem("numberOfAvailablePages");
+
+  // Update the content with the bold text and the variable value
+  availablePagesTextElement.innerHTML = `Number of available pages: <strong>${numberOfAvailablePages}</strong>`;
+}
 
 function openModal() {
   document.getElementById("myModal").style.display = "block";
@@ -39,10 +42,12 @@ function openModal() {
 function closeModal() {
   document.getElementById("myModal").style.display = "none";
   document.querySelector(".overlay").style.display = "none";
+  // document.getElementById("buyConfirmationModal").style.display = "none";
 
   // Clear previous error messages when closing the modal
   clearErrorMessages();
 }
+
 
 function clearErrorMessages() {
   // Remove error messages next to each input field
@@ -86,9 +91,14 @@ function submitForm() {
   const hasErrors = Array.from(errorContainers).some(container => container.innerHTML !== "");
 
   if (!hasErrors) {
+    if(parseInt(copies.value) > parseInt(localStorage.getItem("numberOfAvailablePages"))){
+      document.getElementById("buyConfirmationModal").style.display = "block";
+    }
+    else{
     document.getElementById("printConfirmationModal").style.display = "block";
+    localStorage.setItem("numberOfAvailablePages", parseInt(localStorage.getItem("numberOfAvailablePages")) - parseInt(copies.value));
+    }
     closeModal();
-
     document.querySelector(".overlay").style.display = "block";
   }
 }
@@ -97,10 +107,10 @@ function displayErrorMessage(inputElement, message) {
   // Create and append an error message next to the input field
   const errorContainer = document.createElement("div");
   errorContainer.className = "error-container";
-  errorContainer.style.color = "red"; 
+  errorContainer.style.color = "red";
 
   errorContainer.innerHTML = message;
-  
+
   inputElement.parentNode.appendChild(errorContainer);
 }
 
@@ -127,6 +137,14 @@ function closePrintConfirmation() {
   // Clear previous error messages when closing the main modal
   clearErrorMessages();
   window.location.href = 'printingPage.html';
-  // Additional logic for switching to other pages goes here
-  // For example, you can use window.location.href to navigate to another page
+}
+
+function closeBuyConfirmation() {
+  // Close the print confirmation modal
+  document.getElementById("buyConfirmationModal").style.display = "none";
+  document.querySelector(".overlay").style.display = "none";
+
+  // Clear previous error messages when closing the main modal
+  clearErrorMessages();
+  window.location.href = 'buyPage.html';
 }

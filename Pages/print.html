@@ -2,94 +2,101 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style/print.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style/print.css" />
 
 </head>
 
 <body>
-    <div class="title">
-        <img src="../asset/hcmut.png" alt="Logo">
-        <div class="banner-text">
-            <div class="text">HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY</div>
-            SMART PRINTING SERVICE
-        </div>
-
-    </div>
-    <div class="upload">
-        <img src="../asset/file1.png" alt="Logo">
-        <div >
-            <input type="file" id="file-input" name="file-input" />
-            <label id="file-input-label" for="file-input">Chưa chọn tệp</label>
-            <button type="button" class="function Print" onclick="openModal()">
-               Print
-            </button>
-        </div>
+  <div class="title">
+    <img src="../asset/hcmut.png" alt="Logo">
+    <div class="banner-text">
+      <div class="text">HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY</div>
+      SMART PRINTING SERVICE
     </div>
 
-    <button id="returnButton">  &lt;&lt; Quay lại </button>
-    <!-- <button onclick="openModal()">Open Modal</button> -->
+  </div>
+  <div class="upload">
+    <img src="../asset/file1.png" alt="Logo">
+    <div>
+      <input type="file" id="file-input" name="file-input" />
+      <label id="file-input-label" for="file-input">Chưa chọn tệp</label>
+      <button type="button" class="function Print" onclick="openModal()">
+        Print
+      </button>
+    </div>
+  </div>
 
-    <div id="myModal" class="modal">
-      <div class = "modalHeader">
-        <div class = "image-modelHeader">
+  <button id="returnButton"> &lt;&lt; Quay lại </button>
+  <!-- <button onclick="openModal()">Open Modal</button> -->
+
+  <div id="myModal" class="modal">
+    <div class="modalHeader">
+      <div class="image-modelHeader">
         <img src="../asset/process.png" alt="Logo">
-        </div>
+      </div>
       <h2>Printing Properties</h2>
-      </div>
-      <label for="printerID">Printer ID:</label>
-      <input type="text" id="printerID" name="printerID" required>
-    
-    
-      <label for="inputPages">Input Pages:</label>
-      <select id="inputPagesSelect" name="inputPagesSelect" onchange="handleInputPagesChange()" required>
-        <option value="option1">All</option>
-        <option value="option2">Odd</option>
-        <option value="option3">Even</option>
-        <option value="other">Other</option>
-      </select>
-      
-      <!-- Input field for custom value when "Other" is selected -->
-      <input type="number" id="inputPagesOther" name="inputPagesOther" placeholder="Please input the number of pages as needed"  style="display: none;">
-    
-      <label for="pageSize">Page Size:</label>
-      <select id="pageSize" name="pageSize" required>
-        <option value="A4">A4</option>
-        <option value="A3">A3</option>
-        <option value="Letter">Letter</option>
-        <option value="Legal">Legal</option>
-      </select>
-    
-      <label for="copies">Copies:</label>
-      <input type="number" id="copies" name="copies" min="1" required>
-      <label for="layouts">one-sided/two-sided:</label>
-      <select id="layouts" name="layouts" required>
-        <option value="layout1">one-sided</option>
-        <option value="layout2">two-sided</option>
-      </select>
-      <label for="locations">Binding Location:</label>
-      <select id="locations" name="locations" required>
-        <option value="location1">Long Edge (Left)</option>
-        <option value="location2">Short Edege (Top)</option>
-      </select>
-      <span id="availablePagesText">Number of available pages: </span>
-      <div class="button-container">
-        <button onclick="closeModal()">Close</button>
-        <button onclick="submitForm()">Print</button>
-      </div>
+    </div>
+    <label for="printerID">Printer ID:</label>
+    <input type="text" id="printerID" name="printerID" required>
 
+
+    <label for="inputPages">Input Pages:</label>
+    <select id="inputPagesSelect" name="inputPagesSelect" onchange="handleInputPagesChange()" required>
+      <option value="option1">All</option>
+      <option value="option2">Odd</option>
+      <option value="option3">Even</option>
+      <option value="other">Other</option>
+    </select>
+
+    <!-- Input field for custom value when "Other" is selected -->
+    <input type="number" id="inputPagesOther" name="inputPagesOther"
+      placeholder="Please input the number of pages as needed" style="display: none;">
+
+    <label for="pageSize">Page Size:</label>
+    <select id="pageSize" name="pageSize" required>
+      <option value="A4">A4</option>
+      <option value="A3">A3</option>
+      <option value="Letter">Letter</option>
+      <option value="Legal">Legal</option>
+    </select>
+
+    <label for="copies">Copies:</label>
+    <input type="number" id="copies" name="copies" min="1" required>
+    <label for="layouts">one-sided/two-sided:</label>
+    <select id="layouts" name="layouts" required>
+      <option value="layout1">one-sided</option>
+      <option value="layout2">two-sided</option>
+    </select>
+    <label for="locations">Binding Location:</label>
+    <select id="locations" name="locations" required>
+      <option value="location1">Long Edge (Left)</option>
+      <option value="location2">Short Edege (Top)</option>
+    </select>
+    <span id="availablePagesText">Number of available pages: </span>
+    <div class="button-container">
+      <button onclick="closeModal()">Close</button>
+      <button onclick="submitForm()">Print</button>
     </div>
 
-    <!-- Print Confirmation Modal -->
-<div id="printConfirmationModal" class="print-confirmation-modal">
-  <h2>Document Printed Successfully!</h2>
-  <button onclick="closePrintConfirmation()">OK</button>
-</div>
+  </div>
 
-    
-    <div class="overlay"></div>
+  <!-- Print Confirmation Modal -->
+  <div id="printConfirmationModal" class="print-confirmation-modal">
+    <h2>Document Printed Successfully!</h2>
+    <button onclick="closePrintConfirmation()">OK</button>
+  </div>
+  <div id="buyConfirmationModal" class="buy-confirmation-modal">
+    <h2>Bạn không có đủ giấy in! Vui lòng mua thêm</h2>
+    <!-- <div class="BuyMore"> -->
+      <!-- <button onclick="closeModal()">Close</button> -->
+      <button onclick="closeBuyConfirmation()">OK</button>
+    <!-- </div> -->
+  </div>
+
+  <div class="overlay"></div>
 
 
 </body>

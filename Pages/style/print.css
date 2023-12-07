@@ -187,8 +187,46 @@ body {
     padding: 10px 15px;
     border: none;
     cursor: pointer;
+    margin-left: 160px;
+
   }
 
   .print-confirmation-modal button:hover {
     background-color: #45a049;
   }
+
+  .buy-confirmation-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1001; /* Higher z-index to appear above the main modal */
+    font-family: Arial, sans-serif;
+  }
+
+  .buy-confirmation-modal h2 {
+    margin-bottom: 20px;
+  }
+
+  .buy-confirmation-modal button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-left: 230px;
+  }
+
+  .buy-confirmation-modal button:hover {
+    background-color: #45a049;
+  }
+
+  /* .buy-confirmation-modal .BuyMore{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  } */
