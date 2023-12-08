@@ -12,3 +12,7 @@ document.getElementById('printing').addEventListener('click', function() {
     window.location.href = 'buyPage.html';
   });
   
+  document.getElementById('viewing').addEventListener('click', function() {
+    window.location.href = 'viewHistoryPage.html';
+  });
+  
