@@ -30,6 +30,6 @@ btnLogin.addEventListener("click", (e) => {
     // document.querySelector('.split.home').textContent = username.value;
     window.location.href = "homePage.html";
   } else {
-    alert("Login failed");
+    alert("Login failed! Check your information or maybe you have not register");
   }
 });
