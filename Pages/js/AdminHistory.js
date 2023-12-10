@@ -1,37 +1,39 @@
 document.getElementById('returnButton').addEventListener('click', function() {
-    window.location.href = 'printingPage.html';
+    window.location.href = 'Admin.html';
   });
 
 let events = [
-	{
+    {
         id: 1,
-        date: "2023-11-15",
-        title: "2053161",
-        description: "in Assignment1.pdf"
-    },
-    {
-        id: 2,
-        date: "2023-11-18",
-        title: "2053161",
-        description: "in IOT_introduction.pdf"
-    },
-    {
-        id: 3,
-        date: "2023-11-20",
-        title: "2053161",
-        description: "in LectureNote.pdf"
-    },
-    {
-        id: 4,
         date: "2023-12-01",
         title: "2053161",
         description: "in Assignment1.pdf"
     },
+
     {
-        id: 5,
+        id: 2,
+        date: "2023-12-01",
+        title: "2052477",
+        description: "in Giaotrinh.pdf"
+    },
+
+    {
+        id: 3,
         date: "2023-12-03",
         title: "2053161",
         description: "in IOT_introduction.pdf"
+    },
+    {
+        id: 4,
+        date: "2023-12-04",
+        title: "2052966",
+        description: "in Tailieuthamkhao.pdf"
+    },
+    {
+        id: 5,
+        date: "2023-12-05",
+        title: "2052855",
+        description: "in Chuong1.pdf"
     },
     {
         id: 6,
@@ -39,8 +41,31 @@ let events = [
         title: "2053161",
         description: "in LectureNote.pdf"
     },
+    {
+        id: 7,
+        date: "2023-12-06",
+        title: "2052921",
+        description: "in LectureNote2.pdf"
+    },
 
-	
+    {
+        id: 8,
+        date: "2023-11-15",
+        title: "2053161",
+        description: "in Assignment1.pdf"
+    },
+    {
+        id: 9,
+        date: "2023-11-18",
+        title: "2053161",
+        description: "in IOT_introduction.pdf"
+    },
+    {
+        id: 10,
+        date: "2023-11-20",
+        title: "2053161",
+        description: "in LectureNote.pdf"
+    },
 ];
 // letiables to store event input fields and reminder list
 let eventDateInput =
@@ -112,15 +137,15 @@ function displayReminders() {
 			${eventDate.toLocaleDateString()}`;
 
 			// Add a delete button for each reminder item
-			// let deleteButton =
-			// 	document.createElement("button");
-			// deleteButton.className = "delete-event";
-			// deleteButton.textContent = "Delete";
-			// deleteButton.onclick = function () {
-			// 	deleteEvent(event.id);
-			// };
+			let deleteButton =
+				document.createElement("button");
+			deleteButton.className = "delete-event";
+			deleteButton.textContent = "Delete";
+			deleteButton.onclick = function () {
+				deleteEvent(event.id);
+			};
 
-			// listItem.appendChild(deleteButton);
+			listItem.appendChild(deleteButton);
 			reminderList.appendChild(listItem);
 		}
 	}

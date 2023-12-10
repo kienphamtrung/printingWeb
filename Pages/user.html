@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style/user.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="title">
+        <img src="../asset/hcmut.png" alt="Logo">
+        <div class="banner-text">
+          <div class="text">HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY</div>
+          SMART PRINTING SERVICE
+        </div>
+    
+      </div>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">User Information</h1>
+        <p class="lead">Welcome to the user information page. Hope you have a good experience with our service</p>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="activity-count">Number of activities performed during the month
+                : 32</div>
+            <div class="star-rating">
+              <!-- Repeat the star icon based on the user's rating -->
+              <span class="star-icon">&#9733;</span>
+              <span class="star-icon">&#9733;</span>
+              <span class="star-icon">&#9733;</span>
+              <span class="star-icon">&#9733;</span>
+              <span class="star-icon">&#9733;</span>
+            </div>
+            <a href="#" class="btn btn-primary">Edit Information</a>
+        </div>
+    </div>
+</div>
+<button id="returnButton"> &lt;&lt; Quay lại </button>
+
+<script>
+document.getElementById('returnButton').addEventListener('click', function() {
+    window.location.href = 'printingPage.html';
+  });
+
+</script>
+
+</body>
+</html>

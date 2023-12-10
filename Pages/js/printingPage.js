@@ -16,3 +16,6 @@ document.getElementById('printing').addEventListener('click', function() {
     window.location.href = 'viewHistoryPage.html';
   });
   
+  document.getElementById('user').addEventListener('click', function() {
+    window.location.href = 'user.html';
+  });

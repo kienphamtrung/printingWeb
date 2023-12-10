@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/printerPage.css" />
+  <title>PrinterManagement</title>
+
+</head>
+<body>
+    <div class="title">
+        <img src="../asset/hcmut.png" alt="Logo">
+        <div class="banner-text">
+          <div class="text">HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY</div>
+          SMART PRINTING SERVICE
+        </div>
+    
+      </div>
+      <h1>Printer Management</h2>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Printer ID</th>
+        <th>Queue Status</th>
+        <th>Job</th>
+        <th>Location</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Normal</td>
+        <td>24</td>
+        <td>A4-402</td>
+        <td>
+          <select class="status-select">
+            <option value="enable">Enable</option>
+            <option value="disable">Disable</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Normal</td>
+        <td>11</td>
+        <td>A4-402</td>
+        <td>
+          <select class="status-select">
+            <option value="enable">Enable</option>
+            <option value="disable">Disable</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Out of paper</td>
+        <td>0</td>
+        <td>A4-306</td>
+        <td>
+          <select class="status-select">
+            <option value="enable">Enable</option>
+            <option value="disable">Disable</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Normal</td>
+        <td>25</td>
+        <td>A4-306</td>
+        <td>
+          <select class="status-select">
+            <option value="enable">Enable</option>
+            <option value="disable">Disable</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Error</td>
+        <td>4</td>
+        <td>B4-301</td>
+        <td>
+          <select class="status-select">
+            <option value="enable">Enable</option>
+            <option value="disable">Disable</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Normal</td>
+        <td>2</td>
+        <td>B4-301</td>
+        <td>
+          <select class="status-select">
+            <option value="enable">Enable</option>
+            <option value="disable">Disable</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Normal</td>
+        <td>6</td>
+        <td>B1-202</td>
+        <td>
+          <select class="status-select">
+            <option value="enable">Enable</option>
+            <option value="disable">Disable</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Normal</td>
+        <td>9</td>
+        <td>B1-202</td>
+        <td>
+          <select class="status-select">
+            <option value="enable">Enable</option>
+            <option value="disable">Disable</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Error</td>
+        <td>11</td>
+        <td>B1-204</td>
+        <td>
+          <select class="status-select">
+            <option value="enable">Enable</option>
+            <option value="disable">Disable</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Normal</td>
+        <td>0</td>
+        <td>B1-204</td>
+        <td>
+          <select class="status-select">
+            <option value="enable">Enable</option>
+            <option value="disable">Disable</option>
+          </select>
+        </td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+</div>
+<button class="add-printer-button" onclick="openModal()">Add Printer</button>
+<button id="returnButton"> &lt;&lt; Quay lại </button>
+
+<!-- Modal for adding a new printer -->
+<div id="addPrinterModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Add Printer</h2>
+    </div>
+    <div class="modal-body">
+      <form onsubmit="return addPrinter()">
+        <label for="printerID" class="form-label">Printer ID:</label>
+        <input type="text" id="printerID" name="printerID" class="form-input" required>
+
+        <label for="queueStatus" class="form-label">Queue Status:</label>
+        <input type="text" id="queueStatus" name="queueStatus" class="form-input" required>
+
+        <label for="job" class="form-label">Job:</label>
+        <input type="text" id="job" name="job" class="form-input" required>
+
+        <label for="location" class="form-label">Location:</label>
+        <select id="location" name="location" class="form-select">
+            <option value="num" selected>A4-402</option>
+            <option value="num" >A4-306</option>
+            <option value="num" >B4-301</option>
+            <option value="num" >B4-201</option>
+            <option value="num" >B1-202</option>
+            <option value="num" >B1-204</option>
+          </select>
+        <label for="status" class="form-label">Status:</label>
+        <select id="status" name="status" class="form-select">
+          <option value="enable" selected>Enable</option>
+          <option value="disable">Disable</option>
+        </select>
+
+        <input type="submit" value="Add" class="form-submit">
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script src="./js/printerPage.js"></script>
+
+</body>
+</html>

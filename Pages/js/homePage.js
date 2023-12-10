@@ -2,6 +2,7 @@ const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
 const loginLink = document.querySelector('.split.home');
 const PrintService = document.querySelector('.PrintService');
+const Admin = document.querySelector('.Admin');
 
 console.log(isLoggedIn);
 loginLink.textContent = isLoggedIn ? 'Đăng xuất' : 'Đăng nhập';
@@ -32,6 +33,20 @@ PrintService.addEventListener("click", () => {
   } else {
 
      PrintService.href = "login.html"
+    // localStorage.setItem('isLoggedIn', true);
+  }
+});
+
+Admin.addEventListener("click", () => {
+  if (isLoggedIn) {
+
+    // PrintService.href = ""
+    // localStorage.setItem('name', null);
+
+    // localStorage.setItem('isLoggedIn', false);
+  } else {
+
+     Admin.href = "login.html"
     // localStorage.setItem('isLoggedIn', true);
   }
 });

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SettingPage</title>
+    <link rel="stylesheet" href="./style/settingPage.css">
+</head>
+<body>
+    <div class="title">
+        <img src="../asset/hcmut.png" alt="Logo">
+        <div class="banner-text">
+          <div class="text">HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY</div>
+          SMART PRINTING SERVICE
+        </div>
+    
+      </div>
+    <div class="container">
+        <h1>Thiết lập</h1>
+
+        <form id="applicationForm">
+            <label for="applicationNumber">Số trang mặc định:</label>
+            <input type="number" id="applicationNumber" name="applicationNumber" required>
+
+            <label for="applicationDate">Ngày áp dụng:</label>
+            <input type="date" id="applicationDate" name="applicationDate" required>
+
+            <label for="permittedFiles">Định dạng cho phép</label>
+            <select id="permittedFiles" name="permittedFiles" required>
+                <option value="file3">All</option>
+                <option value="file1">.doc</option>
+                <option value="file2">.pdf</option>
+                <option value="file3">.txt</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <button type="submit">Cài đặt</button>
+        </form>
+    </div>
+    <button id="returnButton"> &lt;&lt; Quay lại </button>
+ <!-- Confirmation Modal -->
+ <!-- <div id="printConfirmationModal" class="print-confirmation-modal">
+    <h2>Completed Successfully!</h2>
+    <button onclick="closePrintConfirmation()">OK</button>
+  </div>
+  <div class="overlay"></div> -->
+
+    <script type="text/javascript" src="./js/settingPage.js"></script>
+</body>
+</html>
